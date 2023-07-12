@@ -44,7 +44,7 @@ public class ProductController {
     @PutMapping("/products/{id}")
     public ResponseEntity<Object> updateProduct(@PathVariable(value = "id") UUID id,
                                                 @RequestBody @Valid ProductRecordDto productRecordDto) {
-        return ResponseEntity.status(HttpStatus.OK).body(service.saveProduct(productRecordDto));
+        return ResponseEntity.status(HttpStatus.OK).body(service.updateProduct(id, productRecordDto));
     }
 
     @Transactional
